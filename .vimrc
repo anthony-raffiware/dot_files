@@ -32,6 +32,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   Plug 'gauteh/vim-cppman'
 
+  Plug 'mattn/calendar-vim'
+
   call plug#end()
 
 endif
@@ -288,6 +290,7 @@ xnoremap <leader>cs :<c-u>call InsertCodeBlock('json')<CR>
 xnoremap <leader>cb :<c-u>call InsertCodeBlock('')<CR>
 
 
+let g:vimwiki_list = [{'path': '~/vimwiki/'}]
 
 "set lcd so fzf-vim with search from the path of the current open file
 autocmd BufEnter ~/vimwiki/* silent! lcd %:p:h
@@ -337,5 +340,6 @@ let g:ale_python_auto_virtualenv = 1
 let g:ale_cpp_clang_options = '-std=c++20 -Wall -Wextra'
 let g:ale_cpp_cc_options   = '-std=c++20 -Wall'
 
+nnoremap <leader>w<leader>c :Calendar<CR>
 "autocmd FileType cpp setlocal keywordprg=cppman
 
